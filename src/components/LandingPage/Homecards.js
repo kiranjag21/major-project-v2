@@ -14,7 +14,7 @@ import { Link} from "react-router-dom";
 import Search from './Home/search'
 import axios from 'axios';
 
-const RESTAURANT_DB_URL = 'http://localhost:8080/api/restaurants';
+const RESTAURANT_DB_URL = `${process.env.BASE_URL}/api/restaurants`;
 const useStyles = makeStyles((theme) => ({
   cardGrid: {
     paddingTop: theme.spacing(8),
