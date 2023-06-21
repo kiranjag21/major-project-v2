@@ -51,7 +51,7 @@ export default function Album() {
     useEffect(()=>{
       axios
       .get(
-        "http://localhost:8080/api/restaurants/"
+        "https://majorproject-server.onrender.com/api/restaurants/"
       )
       .then(res => {
       
