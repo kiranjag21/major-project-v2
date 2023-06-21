@@ -54,7 +54,7 @@ class MainComp extends React.Component {
                 count++;
                 //var pusher, channel;
                 const pusher = new Pusher('153cf7f4abf2fc074dfb', {
-                    authEndpoint: `${process.env.BASE_URL}/pusher/customer/auth`,
+                    authEndpoint: `${process.env.BASE_API_URL}/pusher/customer/auth`,
                     cluster: 'ap2'
                 });
                 var myId = JSON.parse(localStorage.getItem('login')).userId;

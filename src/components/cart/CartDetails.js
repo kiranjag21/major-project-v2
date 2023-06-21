@@ -43,7 +43,7 @@ class CartDetails extends React.Component {
 
 		axios({
 			method: 'POST',
-			url: `${process.env.BASE_URL}/orders`,
+			url: `${process.env.BASE_API_URL}/orders`,
 			data: data
 		})
 			.then((response) => {
