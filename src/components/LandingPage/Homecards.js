@@ -14,7 +14,7 @@ import { Link} from "react-router-dom";
 import Search from './Home/search'
 import axios from 'axios';
 
-const RESTAURANT_DB_URL = `${process.env.BASE_API_URL}/api/restaurants`;
+const RESTAURANT_DB_URL = `https://majorproject-server.onrender.com/api/restaurants`;
 const useStyles = makeStyles((theme) => ({
   cardGrid: {
     paddingTop: theme.spacing(8),
@@ -51,7 +51,7 @@ export default function Album() {
     useEffect(()=>{
       axios
       .get(
-        `${process.env.BASE_API_URL}/api/restaurants/`
+        `https://majorproject-server.onrender.com/api/restaurants/`
       )
       .then(res => {
       

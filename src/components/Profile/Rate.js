@@ -24,7 +24,7 @@ export default function HoverRating(props) {
 
           axios({
             method: 'POST',
-            url: `${process.env.BASE_API_URL}/api/restaurants/rating/${props.restId}`,
+            url: `https://majorproject-server.onrender.com/api/restaurants/rating/${props.restId}`,
             data: {
               userId: JSON.parse(localStorage.getItem('login')).userId,
               rating: newValue

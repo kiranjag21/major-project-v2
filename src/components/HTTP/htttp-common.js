@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: `${process.env.BASE_API_URL}/api`,
+  baseURL: `https://majorproject-server.onrender.com/api`,
   headers: {
     "Content-type": "application/json"
   }

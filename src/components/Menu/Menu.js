@@ -52,12 +52,12 @@ class Menu extends Component {
      }
   };
 componentDidMount() {
-  axios.get(`${process.env.BASE_API_URL}/api/restaurants/findDish/${this.props.restId}`)
+  axios.get(`https://majorproject-server.onrender.com/api/restaurants/findDish/${this.props.restId}`)
     .then(res => {
       const menu = res.data;
       axios({
         method: 'GET',
-        url: `${process.env.BASE_API_URL}/api/restaurants/${this.props.restId}`,
+        url: `https://majorproject-server.onrender.com/api/restaurants/${this.props.restId}`,
       })
       .then((response) => {
           this.setState({
