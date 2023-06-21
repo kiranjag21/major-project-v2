@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="container justify-content-center mt-3 bg-light "
+  style={
+    Object {
+      "fontFamily": "Poppins, sans-serif",
+    }
+  }
+>
+  <div
+    className="row justify-content-center border-left"
+  />
+  <div
+    className="row justify-content-center"
+  >
+    <div
+      className="col mr-md-5 mt-1 "
+    >
+      <div
+        className="empty-cart"
+      >
+        <img
+          alt="empty-cart"
+          src="https://res.cloudinary.com/sivadass/image/upload/v1495427934/icons/empty-cart.png"
+        />
+        <h2
+          className="text-warning text-center"
+        >
+          You cart is empty!
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+`;

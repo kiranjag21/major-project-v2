@@ -1,0 +1,12 @@
+.top {
+  font-family:"Poppins, sans-serif";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height:100%;
+}
+h3{
+  color: white;
+  background-color:#c3073f;
+  margin-bottom: 2%;
+}
