@@ -21,7 +21,6 @@
     "mdbreact": "^5.0.1",
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
-    "node-sass": "^5.0.0",
     "pusher-js": "^7.0.3",
     "react": "^17.0.1",
     "react-bootstrap": "^1.5.0",
