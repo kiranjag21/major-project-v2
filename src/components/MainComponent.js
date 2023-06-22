@@ -70,12 +70,12 @@ class MainComp extends React.Component {
         return (
             <Switch>
                 <Route exact path="/" component={Home} />
-                <PrivateRoute exact path="/menu/:restId" component={({ match }) => <Menu restId={match.params.restId} />} />
-                <PrivateRoute exact path="/cart" component={() => <Cart />} />
+                <PrivateRoute setOpenLogin={this.props.setOpenLogin} exact path="/menu/:restId" component={({ match }) => <Menu restId={match.params.restId} />} />
+                <PrivateRoute setOpenLogin={this.props.setOpenLogin} exact path="/cart" component={() => <Cart />} />
                 <Route exact path="/about-us" component={AboutUs} />
-                <PrivateRoute exact path="/profile" component={() => <Profile />} />
-                <PrivateRoute exact path="/users" component={users} />
-                <PrivateRoute exact path="/tracking" component={() => <TrackOrder />} />
+                <PrivateRoute setOpenLogin={this.props.setOpenLogin} exact path="/profile" component={() => <Profile />} />
+                <PrivateRoute setOpenLogin={this.props.setOpenLogin} exact path="/users" component={users} />
+                <PrivateRoute  setOpenLogin={this.props.setOpenLogin} exact path="/tracking" component={() => <TrackOrder />} />
             </Switch>
         );
     }

@@ -5,16 +5,21 @@ import { Route, BrowserRouter, Switch, Link } from "react-router-dom";
 import { configureStore } from './components/redux/configureStore';
 import { Provider } from 'react-redux';
 import MainComp from './components/MainComponent';
+import React from 'react';
+
 const store = configureStore();
 function App() {
+
+  const [openLogin, setOpenLogin] = React.useState(false);
+  const [openSignup, setOpenSignup] = React.useState(false);
 
   return (
 
     <div className="App">
       <Provider store={store}>
         <BrowserRouter>
-          <NavBar /><br></br>
-          <MainComp />
+          <NavBar openLogin={openLogin} openSignup={openSignup} setOpenLogin={setOpenLogin} setOpenSignup={setOpenSignup}/><br></br>
+          <MainComp openLogin={openLogin} setOpenLogin={setOpenLogin}/>
           <Footer />
         </BrowserRouter>
       </Provider>

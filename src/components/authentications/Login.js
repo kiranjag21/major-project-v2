@@ -18,6 +18,7 @@ import { useHistory } from "react-router-dom";
 import { setConnection, addUser } from '../redux/reduxActions';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { Backdrop, CircularProgress } from '@material-ui/core';
 
 const mapDispatchToProps = (dispatch) => ({
     setConnection: (data) => dispatch(setConnection(data)),
@@ -59,6 +60,7 @@ export function SignIn(props) {
   const [emailId, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [login, setLogin] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const history = useHistory()
 
   const loginReporter = (event) => {
@@ -67,9 +69,10 @@ export function SignIn(props) {
     var data = {
       emailId, password
     };
-
+    setIsLoading(true);
     UserDataService.login(data)
       .then(response => {
+        setIsLoading(false);
         if (response) {
 
           if(response.data == 'fail') {
@@ -85,6 +88,7 @@ export function SignIn(props) {
        
       })
       .catch(e => {
+        setIsLoading(false);
         console.log(e);
       });
 
@@ -133,7 +137,9 @@ export function SignIn(props) {
           </Button>
           </form>
       </div>
-
+      <Backdrop open={isLoading} >
+  <CircularProgress color="inherit" />
+</Backdrop>
     </Container>
   );
 }

@@ -15,6 +15,7 @@ import { useState } from "react";
 import UserDataService from "../../services/UserService";
 
 import { Link } from 'react-router-dom';
+import { Backdrop, CircularProgress } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
@@ -50,6 +51,7 @@ export default function SignUp(props) {
   };
  
   const [user, setUser] = useState(initialState);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -67,6 +69,7 @@ export default function SignUp(props) {
      
     };
     console.log(data);
+    setIsLoading(true);
     UserDataService.create(data)
       .then((response) => {
         setUser({
@@ -78,9 +81,11 @@ export default function SignUp(props) {
         });
         console.log(response.data);
         props.handleSignupClose();
+        setIsLoading(false);
       })
       .catch((err) => {
         console.log(err);
+        setIsLoading(false);
       });
   };
 
@@ -173,6 +178,9 @@ export default function SignUp(props) {
       <Box mt={5}>
       
       </Box>
+      <Backdrop open={isLoading} >
+  <CircularProgress color="inherit" />
+</Backdrop>
     </Container>
   );
 }

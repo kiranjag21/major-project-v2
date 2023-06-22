@@ -53,27 +53,25 @@ export function NavBar(props) {
     setAnchorEl(null);
     handleMobileMenuClose();
   };
-  const [openLogin, setOpenLogin] = React.useState(false);
-  const [openSignup, setOpenSignup] = React.useState(false);
   const handleLoginOpen = () => {
-    setOpenLogin(true);
+    props.setOpenLogin(true);
     setAnchorEl(null);
     handleMobileMenuClose();
   };
   const handleSignupOpen = () => {
-    setOpenSignup(true);
+    props.setOpenSignup(true);
     setAnchorEl(null);
     handleMobileMenuClose();
   };
   const handleLoginClose = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
-    setOpenLogin(false);
+    props.setOpenLogin(false);
   };
   const handleSignupClose = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
-    setOpenSignup(false);
+    props.setOpenSignup(false);
   };
   const handleLogout = () => {
     localStorage.removeItem('login');
@@ -141,7 +139,7 @@ export function NavBar(props) {
   return (
     <div>
       <Dialog
-        open={openLogin}
+        open={props.openLogin}
         TransitionComponent={Transition}
         keepMounted
         onClose={handleLoginClose}
@@ -154,7 +152,7 @@ export function NavBar(props) {
       </Dialog>
 
       <Dialog
-        open={openSignup}
+        open={props.openSignup}
         TransitionComponent={Transition}
         keepMounted
         onClose={handleSignupClose}
