@@ -12,6 +12,7 @@ import Rating from '@material-ui/lab/Rating';
 import { Link} from "react-router-dom";
 import Grid from '@material-ui/core/Grid';
 import "./style.css";
+import { CircularProgress } from "@material-ui/core";
 
 
 const breakPoints = [
@@ -27,17 +28,21 @@ export default class TopDish extends React.Component{
     super();
     this.state={
       restau:[],
-      topRestaurants: []
+      topRestaurants: [],
+      isLoading: false
     }
   }
   componentDidMount(){
+
+    this.setState({ isLoading: true });
     axios.get(`https://majorproject-server.onrender.com/api/deliveryusers/avgrating`)
     .then((res)=>{
       let data = res.data;
       if(data.length > 0 ) {
         let topRestaurantsSorted = data.sort((a, b) => (a.avgrate < b.avgrate) ? 1 : -1)
         this.setState({
-          topRestaurants: topRestaurantsSorted
+          topRestaurants: topRestaurantsSorted,
+          isLoading: false
         })
       }
     })
@@ -48,7 +53,9 @@ export default class TopDish extends React.Component{
       <div style={{marginTop:"2%"}}>
         <h3 style={{'borderRadius':'4px','fontFamily':'Poppins, sans-serif','color':'#e7e8e8' ,'width':'90%','margin':'auto'}} > Top-Restaurants</h3><br/>
         <div className="top">
-        <Carousel breakPoints={breakPoints}>
+
+        {this.state.isLoading && <CircularProgress />}
+        {!this.state.isLoading && <Carousel breakPoints={breakPoints}>
           {
             this.state.topRestaurants.map(rest => {
               return(
@@ -87,7 +94,7 @@ export default class TopDish extends React.Component{
               );
             })
           }
-        </Carousel>
+        </Carousel>}
       </div>
       </div>
     )

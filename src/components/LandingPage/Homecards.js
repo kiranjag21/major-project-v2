@@ -13,6 +13,7 @@ import Rating from '@material-ui/lab/Rating';
 import { Link} from "react-router-dom";
 import Search from './Home/search'
 import axios from 'axios';
+import { CircularProgress } from '@material-ui/core';
 
 const RESTAURANT_DB_URL = `https://majorproject-server.onrender.com/api/restaurants`;
 const useStyles = makeStyles((theme) => ({
@@ -47,14 +48,16 @@ export default function Album() {
 
     const [data, setData] = useState([]);
     const [searchValue, setSearchValue] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(()=>{
+      setIsLoading(true);
       axios
       .get(
         `https://majorproject-server.onrender.com/api/restaurants/`
       )
       .then(res => {
-      
+        setIsLoading(false);
         setData(res.data);
       })
       .catch(error => {
@@ -78,6 +81,8 @@ export default function Album() {
 
       <main>
       <Search searchHandler={searchHandler} />
+        {isLoading && <CircularProgress />}
+        {!isLoading && 
       <Container className={classes.cardGrid} maxWidth="lg">
           <Grid container spacing={4}>
 
@@ -120,7 +125,7 @@ export default function Album() {
               </Grid>
             ))}
           </Grid>
-        </Container>
+        </Container>}
       </main>
     </React.Fragment>
 
