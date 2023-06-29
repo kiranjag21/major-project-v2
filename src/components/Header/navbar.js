@@ -104,9 +104,6 @@ export function NavBar(props) {
             <MenuItem onClick={handleLoginOpen} style={{ fontFamily: "Poppins, sans-serif" }}>Login </MenuItem>
           </div>
       }
-      <MenuItem style={{ fontFamily: "Poppins, sans-serif" }}>
-        <Link to="/about-us" style={{ color: "black" }}>About Us</Link>
-      </MenuItem>
 
     </Menu>
   );
@@ -208,11 +205,6 @@ export function NavBar(props) {
                   </IconButton>
                   </div>
               }
-              <IconButton>
-                <Link to="/about-us" >
-                  <InfoSharpIcon style={{ fill: '#e7e8e8', marginBottom: '14%' }}></InfoSharpIcon>
-                </Link>
-              </IconButton>
               <IconButton
                 edge="end"
                 aria-label="account of current user"

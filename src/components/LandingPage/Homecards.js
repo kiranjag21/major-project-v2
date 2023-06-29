@@ -81,7 +81,7 @@ export default function Album() {
 
       <main>
       <Search searchHandler={searchHandler} />
-        {isLoading && <CircularProgress />}
+        {isLoading && <div style={{ marginTop: '20px'}}><CircularProgress /></div>}
         {!isLoading && 
       <Container className={classes.cardGrid} maxWidth="lg">
           <Grid container spacing={4}>

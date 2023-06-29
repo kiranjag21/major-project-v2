@@ -43,6 +43,10 @@
   }
 }
 
-.MuiContainer-root .MuiBackdrop-root {
+.MuiBackdrop-root {
   z-index: 1001 !important;
+}
+.MuiDialog-container {
+  z-index: 1002 !important;
+  position: relative;
 }
