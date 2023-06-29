@@ -37,7 +37,7 @@ export default function HeroUnit() {
     useEffect(()=>{
         const fetchUsers = async () => {
             try{
-                const response = await axios.get(`https://majorproject-server.onrender.com/api/users/user/${JSON.parse(localStorage.getItem('login')).userId}`);
+                const response = await axios.get(`${process.env.REACT_APP_BASE_API_URL}/api/users/user/${JSON.parse(localStorage.getItem('login')).userId}`);
                 setUsername(response.data.Username);
                 setAddress(response.data.Address);
                 setEmail(response.data.EmailId);

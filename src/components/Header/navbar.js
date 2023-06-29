@@ -147,7 +147,7 @@ export function NavBar(props) {
         aria-describedby="alert-dialog-slide-description"
       >
         <DialogContent >
-          <SignIn handleLoginClose={handleLoginClose} />
+          <SignIn handleLoginClose={handleLoginClose} setOpenSignup={props.setOpenSignup}/>
         </DialogContent>
       </Dialog>
 

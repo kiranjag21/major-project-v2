@@ -19,7 +19,7 @@ function App() {
       <Provider store={store}>
         <BrowserRouter>
           <NavBar openLogin={openLogin} openSignup={openSignup} setOpenLogin={setOpenLogin} setOpenSignup={setOpenSignup}/><br></br>
-          <MainComp openLogin={openLogin} setOpenLogin={setOpenLogin}/>
+          <MainComp openLogin={openLogin} setOpenLogin={setOpenLogin} setOpenSignup={setOpenSignup}/>
           <Footer />
         </BrowserRouter>
       </Provider>

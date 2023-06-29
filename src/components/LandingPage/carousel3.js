@@ -35,7 +35,7 @@ export default class TopDish extends React.Component{
   componentDidMount(){
 
     this.setState({ isLoading: true });
-    axios.get(`https://majorproject-server.onrender.com/api/deliveryusers/avgrating`)
+    axios.get(`${process.env.REACT_APP_BASE_API_URL}/api/deliveryusers/avgrating`)
     .then((res)=>{
       let data = res.data;
       if(data.length > 0 ) {

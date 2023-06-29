@@ -43,7 +43,7 @@ class CartDetails extends React.Component {
 
 		axios({
 			method: 'POST',
-			url: `https://majorproject-server.onrender.com/orders`,
+			url: `${process.env.REACT_APP_BASE_API_URL}/orders`,
 			data: data
 		})
 			.then((response) => {

@@ -54,12 +54,12 @@ class Menu extends Component {
   };
 componentDidMount() {
   this.setState({ isLoading: true });
-  axios.get(`https://majorproject-server.onrender.com/api/restaurants/findDish/${this.props.restId}`)
+  axios.get(`${process.env.REACT_APP_BASE_API_URL}/api/restaurants/findDish/${this.props.restId}`)
     .then(res => {
       const menu = res.data;
       axios({
         method: 'GET',
-        url: `https://majorproject-server.onrender.com/api/restaurants/${this.props.restId}`,
+        url: `${process.env.REACT_APP_BASE_API_URL}/api/restaurants/${this.props.restId}`,
       })
       .then((response) => {
           this.setState({

@@ -136,6 +136,10 @@ export function SignIn(props) {
           Login
           </Button>
           </form>
+          <div className='text-secondary'>Dont have account?  <a role="button" style={{ cursor: 'pointer'}} className='link pointer' onClick={() => {
+            props.handleLoginClose();
+            props.setOpenSignup(true);
+          }}>SignUp</a></div>
       </div>
       <Backdrop open={isLoading} >
   <CircularProgress color="inherit" />

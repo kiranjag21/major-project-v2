@@ -14,7 +14,7 @@ const useStyles = makeStyles({
 export default function ShowDeliveryRating(props) {
     const classes = useStyles();
     const [value, setValue] = React.useState(0);
-    axios.get(`https://majorproject-server.onrender.com/api/restaurants/rating/${props.restId}`)
+    axios.get(`${process.env.REACT_APP_BASE_API_URL}/api/restaurants/rating/${props.restId}`)
         .then((rating)=>{
             setValue(rating.data.ratings)
         });

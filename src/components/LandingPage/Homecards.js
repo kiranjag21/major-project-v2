@@ -15,7 +15,7 @@ import Search from './Home/search'
 import axios from 'axios';
 import { CircularProgress } from '@material-ui/core';
 
-const RESTAURANT_DB_URL = `https://majorproject-server.onrender.com/api/restaurants`;
+const RESTAURANT_DB_URL = `${process.env.REACT_APP_BASE_API_URL}/api/restaurants`;
 const useStyles = makeStyles((theme) => ({
   cardGrid: {
     paddingTop: theme.spacing(8),
@@ -54,7 +54,7 @@ export default function Album() {
       setIsLoading(true);
       axios
       .get(
-        `https://majorproject-server.onrender.com/api/restaurants/`
+        `${process.env.REACT_APP_BASE_API_URL}/api/restaurants/`
       )
       .then(res => {
         setIsLoading(false);

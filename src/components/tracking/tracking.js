@@ -59,7 +59,7 @@ class TrackOrder extends React.Component {
           })
           axios({
               method: 'POST',
-              url: `https://majorproject-server.onrender.com/api/restaurants/orders`,
+              url: `${process.env.REACT_APP_BASE_API_URL}/api/restaurants/orders`,
               data: data
           })
               .then((response) => {

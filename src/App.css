@@ -42,3 +42,7 @@
     transform: rotate(360deg);
   }
 }
+
+.MuiContainer-root .MuiBackdrop-root {
+  z-index: 1001 !important;
+}

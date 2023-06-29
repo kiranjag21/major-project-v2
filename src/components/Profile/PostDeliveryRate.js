@@ -26,7 +26,7 @@ export default function DeliveryHoverRating(props) {
           data.rating = newValue;
           axios({
             method: 'POST',
-            url: `https://majorproject-server.onrender.com/api/deliveryusers/ratedelivery`,
+            url: `${process.env.REACT_APP_BASE_API_URL}/api/deliveryusers/ratedelivery`,
             data: data
           })
           .then((response) => {

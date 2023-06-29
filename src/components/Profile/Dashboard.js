@@ -48,7 +48,7 @@ export default function Dashboard() {
   useEffect(()=>{
     const fetchRestaurants = async () => {
       try{
-        const response = await axios.get(`https://majorproject-server.onrender.com/api/restaurants/profile/${JSON.parse(localStorage.getItem('login')).userId}`);
+        const response = await axios.get(`${process.env.REACT_APP_BASE_API_URL}/api/restaurants/profile/${JSON.parse(localStorage.getItem('login')).userId}`);
         setData(response.data);
       } catch(e){
         throw e;
